@@ -4,13 +4,22 @@ const input_el = document.querySelector(".input");
 
 const ul_el = document.querySelector(".list");
 
+
 let list = JSON.parse(localStorage.getItem("list"));
 
+const color_list = ["pink", "lightblue", "blanchedalmond", "rgb(210, 231, 250)", "rgb(234, 192, 240)" ]
+
+
 if(list){
-console.log(list);
+//   console.log("length = " + list.length)
+// console.log(list);
 list.forEach((task)=>{
   todoList(task)
 })
+}
+
+function getlist_length(){
+  return list.length;
 }
 
 form_el.addEventListener("submit", (event)=>{
@@ -26,12 +35,15 @@ function todoList(task){
     new_task= task.name;
   }
 
+  let list_length = getlist_length();
+
   const li_el = document.createElement("li");
   if(task && task.checked){
     li_el.classList.add("checked");
   }
 
   li_el.innerText = new_task;
+  li_el.style.backgroundColor = color_list[list_length%4];
   ul_el.appendChild(li_el);
   input_el.value = "";
   const checkBtn_el = document.createElement("div");
@@ -67,3 +79,4 @@ function updateLocalStorage(){
   });
   localStorage.setItem("list", JSON.stringify(list));
 }
+
