@@ -54,7 +54,6 @@ body{
   border-color: black;
   border:currentColor;
   border-radius: 20px;
-  transition-duration: 1s;
 }
 
 .list li .fa-trash-can{
