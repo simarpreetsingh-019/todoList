@@ -43,7 +43,7 @@ function todoList(task){
   }
 
   li_el.innerText = new_task;
-  li_el.style.backgroundColor = color_list[list_length%4];
+  li_el.style.backgroundColor = color_list[list_length%5];
   ul_el.appendChild(li_el);
   input_el.value = "";
   const checkBtn_el = document.createElement("div");
