@@ -7,7 +7,7 @@ const ul_el = document.querySelector(".list");
 
 let list = JSON.parse(localStorage.getItem("list"));
 
-const color_list = ["pink", "lightblue", "blanchedalmond", "rgb(210, 231, 250)", "rgb(234, 192, 240)" ]
+const color_list = ["rgb(210, 231, 250)", "pink", "lightblue", "blanchedalmond", "rgb(234, 192, 240)" ]
 
 
 if(list){
